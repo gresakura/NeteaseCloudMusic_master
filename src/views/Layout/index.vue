@@ -4,6 +4,7 @@ import Aside from '@/views/Layout/component/main/aside.vue'
 import Footer from '@/views/Layout/component/w-footer/index.vue'
 import { useBannerStores } from '@/stores/banner'
 import { useMusicStores } from '@/stores/music'
+import { useSongStore } from '@/stores/song'
 import { onMounted } from "vue";
 
 const startLayout = useBannerStores()
@@ -14,6 +15,12 @@ onMounted(() => {
   MusicSetOf.useMusic()
   MusicSetOf.useNewMusic()
   MusicSetOf.usePrivate()
+})
+
+const SongStore = useSongStore()
+onMounted(() => {
+  SongStore.GetHotMusic()
+  SongStore.GetGoodMusic()
 })
 </script>
 
