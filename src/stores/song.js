@@ -32,4 +32,6 @@ export const useSongStore = defineStore('song',() => {
         GetHotMusic,
         GetGoodMusic
     }
+},{
+    persist: true
 })

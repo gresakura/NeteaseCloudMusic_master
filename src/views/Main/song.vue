@@ -35,7 +35,7 @@ const handleCurrentChange = () => {
 <template>
   <el-container style="padding: 20px">
     <el-header style="display: flex;height: 60px;">
-      <p style="display: flex;align-content: center">
+      <p style="display: flex;align-items: center!important;">
         热门标签:
         <span id="cats" v-for="(item,index) in SongStore.HotMusicList" :class="'cat'+index" @click="changeMusicListCat(item.name,index)"
               style="margin-left: 25px;cursor: pointer;">{{item.name}}</span>
@@ -69,7 +69,7 @@ const handleCurrentChange = () => {
         </el-col>
       </el-row>
       <!--分页-->
-      <el-pagination
+      <el-pagination style="padding-top: 25px"
           layout="prev, pager, next"  :page-size="queryInfo.limit"
           :total="SongStore.goodMusicListTotal" @current-change="handleCurrentChange">
       </el-pagination>
@@ -101,7 +101,4 @@ h1 {
   --el-pagination-bg-color: none
 }
 
-.el-pagination button.is-disabled, .el-pagination button:disabled {
-  background: none
-}
 </style>

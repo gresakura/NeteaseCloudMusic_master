@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
+const router = useRoute()
 
 const navList = ref([
   {
@@ -39,7 +41,7 @@ const activeIndex = ref(0)
     <el-header style="border-bottom: 1px solid rgb(230,230,230)" height="150px;">
       <el-menu
 
-          :default-active="navList[0].path"
+          :default-active="router.path"
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
